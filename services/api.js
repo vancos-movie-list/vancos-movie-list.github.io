@@ -1,4 +1,4 @@
-export const baseUrl = 'http://localhost:3030';
+export const baseUrl = 'https://movie-list-97.herokuapp.com';
 
 
 const login = `${baseUrl}/users/login`
