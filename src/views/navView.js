@@ -1,5 +1,5 @@
 import { html } from "https://unpkg.com/lit-html?module";
-import { ifDefined } from "../../node_modules/lit-html/directives/if-defined.js";
+//import { ifDefined } from "../../node_modules/lit-html/directives/if-defined.js";
 import authService from "../../services/authService.js";
 
 const showUserInfo = (email) => html`
@@ -17,7 +17,7 @@ const navTemplate = (isLoged, email) => html`
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         ${isLoged
-                        ? html`
+        ? html`
                         <a class="nav-link" aria-current="page" href="/">Home</a>
         
                         <a class="nav-link" href="/movies">Movies</a>
@@ -28,12 +28,12 @@ const navTemplate = (isLoged, email) => html`
                         <a class="nav-link" href="/logout">Logout</a>
         
                         `
-                        : html`
+        : html`
                         <a class="nav-link" href="/login">Login</a>
         
                         <a class="nav-link" href="/register">Register</a>
                         `
-                        }
+    }
         
                     </div>
                 </div>
