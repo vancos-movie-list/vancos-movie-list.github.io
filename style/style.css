@@ -1,0 +1,41 @@
+body{
+    background-color: #f8f9fa;
+}
+
+.form{
+    width: 400px;
+}
+.create-form{
+    margin-left: 200px;
+    width: 150%;
+    padding: 10px;
+}
+.btn-red{
+    background-color: red;
+}
+
+.site-wrapper{
+    width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+
+.col-auto{
+    padding: 20px;
+}
+
+input{
+    margin-top: 10px;
+}
+.card{
+   margin-right: 10px;
+}
+
+.details-card{
+    margin: 0 auto;
+    align-self: center;
+}
+
+.movie-list{
+    display: flex;
+}
