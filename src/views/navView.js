@@ -1,4 +1,4 @@
-import { html } from "../../node_modules/lit-html/lit-html.js";
+import { html } from "https://unpkg.com/lit-html?module";
 import { ifDefined } from "../../node_modules/lit-html/directives/if-defined.js";
 import authService from "../../services/authService.js";
 
