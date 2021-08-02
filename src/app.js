@@ -11,9 +11,10 @@ import { renderNavi } from "./views/navView.js";
 import { logoutPage } from "./views/logoutView.js";
 import { createMoviePage } from "./views/createMovieView.js";
 import { editMoviePage } from "./views/editMovieView.js";
+import { queryString } from "../middleware/querryStringMiddleWear.js";
 
 page(renderMiddleware);
-
+page(queryString);
 
 page('/', renderNavi, homePage);
 page('/movies', renderNavi, moviesPage);

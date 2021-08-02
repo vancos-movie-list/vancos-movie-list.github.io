@@ -1,5 +1,5 @@
 import { html } from "https://unpkg.com/lit-html?module";
-import { getAllMovies, getMyMovies } from "../../services/movieService.js";
+import { getAllMovies, getMyMovies, searchMovie } from "../../services/movieService.js";
 
 const movieTemlpate = (movie) => html`
 <div class="card " style="width: 18rem;">
@@ -19,14 +19,19 @@ const moviesTemplate = (movies) => html`
 `;
 
 export async function moviesPage(ctx) {
-    let movies = await getAllMovies();
-
+    let movies = undefined
+    if (!ctx.qs) {
+        movies = await getAllMovies();
+    } else {
+        let search = ctx.qs.search;
+        movies = await searchMovie(search)
+    }
     ctx.render(moviesTemplate(movies));
+
 }
 
 export async function myMoviesPage(ctx) {
     let ownerId = ctx.userData.userId
     let movies = await getMyMovies(ownerId);
-
     ctx.render(moviesTemplate(movies));
 }
