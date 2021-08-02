@@ -1,5 +1,5 @@
-//export const baseUrl = 'https://movie-list-97.herokuapp.com';
-export const baseUrl = 'http://localhost:3030';
+export const baseUrl = 'https://movie-list-97.herokuapp.com';
+//export const baseUrl = 'http://localhost:3030';
 
 
 const login = `${baseUrl}/users/login`
