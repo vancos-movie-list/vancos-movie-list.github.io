@@ -5,15 +5,6 @@ const showUserInfo = (email) => html`
     <span>Welcome ${email}</span>
 `;
 
-function onSearch(e) {
-    e.preventDefault();
-    let form = e.target;
-    let formData = new FormData(form);
-    let search = formData.get('search')
-
-    movieService.searchMovie(search.trim())
-}
-
 const navTemplate = (isLoged, email, onSearch) => html`
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -25,7 +16,7 @@ const navTemplate = (isLoged, email, onSearch) => html`
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         ${isLoged
-                        ? html`
+        ? html`
                         <a class="nav-link" aria-current="page" href="/">Home</a>
         
                         <a class="nav-link" href="/movies">Movies</a>
@@ -36,12 +27,12 @@ const navTemplate = (isLoged, email, onSearch) => html`
                         <a class="nav-link" href="/logout">Logout</a>
         
                         `
-                        : html`
+        : html`
                         <a class="nav-link" href="/login">Login</a>
         
                         <a class="nav-link" href="/register">Register</a>
                         `
-                        }
+    }
         
                     </div>
                     <form class="d-flex" @submit=${onSearch}>

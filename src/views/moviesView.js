@@ -20,7 +20,7 @@ const moviesTemplate = (movies, pages, currentPage = 1) => html`
     <ul class="movie-list">
         ${movies.slice((ITEMS_PER_PAGE * currentPage - 1) - 2, (ITEMS_PER_PAGE * currentPage - 1) - 2 + ITEMS_PER_PAGE)
         .map(m =>
-        movieTemlpate(m))}
+            movieTemlpate(m))}
     </ul>
     <nav aria-label="Page navigation example">
         <ul class="pagination">
@@ -69,5 +69,6 @@ export async function moviesPage(ctx) {
 export async function myMoviesPage(ctx) {
     let ownerId = ctx.userData.userId
     let movies = await getMyMovies(ownerId);
-    ctx.render(moviesTemplate(movies));
+    let pages = generatePaging(movies)
+    ctx.render(moviesTemplate(movies, pages, ctx.qs.page));
 }
